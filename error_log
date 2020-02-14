@@ -1,0 +1,20 @@
+[12-Feb-2020 06:11:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home/cabbookingscript/public_html/demo/cab-company/application/errors/error_404.php:13
+Stack trace:
+#0 /home/cabbookingscript/public_html/demo/cab-company/system/core/Exceptions.php(146): include()
+#1 /home/cabbookingscript/public_html/demo/cab-company/system/core/Exceptions.php(115): CI_Exceptions->show_error('404 Page Not Fo...', '<p>The page you...', 'error_404', 404)
+#2 /home/cabbookingscript/public_html/demo/cab-company/system/core/Common.php(331): CI_Exceptions->show_404('assets', true)
+#3 /home/cabbookingscript/public_html/demo/cab-company/system/core/Router.php(348): show_404('assets')
+#4 /home/cabbookingscript/public_html/demo/cab-company/system/core/Router.php(227): CI_Router->_validate_request(Array)
+#5 /home/cabbookingscript/public_html/demo/cab-company/system/core/Router.php(395): CI_Router->_set_request(Array)
+#6 /home/cabbookingscript/public_html/demo/cab-company/system/core/Router.php(170): CI_Router->_parse_routes()
+#7 /home/cabbooking in /home/cabbookingscript/public_html/demo/cab-company/application/errors/error_404.php on line 13
+[12-Feb-2020 06:11:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home/cabbookingscript/public_html/demo/cab-company/application/errors/error_404.php:13
+Stack trace:
+#0 /home/cabbookingscript/public_html/demo/cab-company/system/core/Exceptions.php(146): include()
+#1 /home/cabbookingscript/public_html/demo/cab-company/system/core/Exceptions.php(115): CI_Exceptions->show_error('404 Page Not Fo...', '<p>The page you...', 'error_404', 404)
+#2 /home/cabbookingscript/public_html/demo/cab-company/system/core/Common.php(331): CI_Exceptions->show_404('assets', true)
+#3 /home/cabbookingscript/public_html/demo/cab-company/system/core/Router.php(348): show_404('assets')
+#4 /home/cabbookingscript/public_html/demo/cab-company/system/core/Router.php(227): CI_Router->_validate_request(Array)
+#5 /home/cabbookingscript/public_html/demo/cab-company/system/core/Router.php(395): CI_Router->_set_request(Array)
+#6 /home/cabbookingscript/public_html/demo/cab-company/system/core/Router.php(170): CI_Router->_parse_routes()
+#7 /home/cabbooking in /home/cabbookingscript/public_html/demo/cab-company/application/errors/error_404.php on line 13

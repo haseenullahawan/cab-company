@@ -1,0 +1,572 @@
+<style>
+    .footer-new{
+        color: #826d6df5;
+        height: 59px;
+        /*background: transparent linear-gradient(#FBFBFB, #ECECEC, #CECECE) repeat scroll 0% 0% !important;*/
+    }
+    .develop-p{
+        padding: 24px 0px 0px;
+        float: left;
+        font-size: 14px;
+    }
+    .contact{
+        padding: 24px 0px 0px;
+        float: left;
+    }
+    span.call-us {
+        margin-left: 0px;
+    }
+    span.ticket-support {
+        margin-left: 0px;
+        color: #826d6df5 !important;
+        font-size: 15px;
+    }
+</style>
+
+</div>
+</div>
+<section class="footer-new" style="text-align: center;    overflow: hidden;">
+    <div class="container-fluid" style="padding:0;border-left: none;border-right: none;">
+        <div class="row-fluid footer-bg">
+            <div class="col-md-3">
+                <p class="develop-p">Powered by <a href="http://netsco.biz/cab-booking-script.php" target="_BLANK" style="color: #826d6df5;">V 1.0</a></p>
+
+            </div>
+            <div class="col-md-4">
+                <p class="develop-p">NETSCO LLC. Copyright © 2020 <a href="http://netsco.biz/" target="_BLANK" style="color: #826d6df5;">www.NETSCO.biz</a></p>
+
+            </div>
+            <div class="col-md-5">
+                <div class="col-md-4">
+                    <div class="contact">
+                         <span class="call-us" style="color: #826d6df5 !important;font-size: 15px;"><i class="fa fa-phone" style="color: #826d6df5 !important;font-size: 20px;"></i> (+1) 302 261 9397
+                </span>
+<!--                        <a href="-->
+                        <?php //echo site_url();?>
+<!--                        contact.php"<span class="send-us-email" style="color: #826d6df5 !important;font-size: 15px;"><i class="fa fa-envelope" style="color: #826d6df5 !important;font-size: 20px;">-->
+<!--                            </i> Send Us Email</span></a>-->
+                    </div>
+                </div>
+<!--                <div class="col-md-3">-->
+<!--                    <div class="contact">-->
+<!---->
+<!--                        <span class="call-us" style="color: #826d6df5 !important;font-size: 15px;"><i class="fa fa-fax" style="color: #826d6df5 !important;font-size: 20px;"></i> (+1) 302 261 9397-->
+<!--                </span>-->
+<!--                    </div>-->
+<!--                </div>-->
+                        <div class="col-md-4">
+                            <div class="contact">
+                                <a href="<?php echo site_url();?>supporttickets.php">
+                                    <span class="call-us" style="color: #826d6df5 !important;font-size: 15px;"><i class="fa fa-comments-o" style="color: #826d6df5 !important;font-size: 20px;"></i> Chat Support</span>
+                                </a>
+                            </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact">
+                <a href="<?php echo site_url();?>supporttickets.php"><span class="ticket-support"><i class="fa fa-headphones" style="color: #826d6df5 !important;font-size: 20px;"></i> Ticket Support</span></a>
+                        </div>
+                    </div>
+                    </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+<script>
+    $(function() {
+        //$(".chzn-select").chosen();
+    });
+</script>
+<script src="<?php echo base_url(); ?>assets/system_design/scripts/Chart.js"></script>
+<script src="<?php echo base_url(); ?>assets/system_design/scripts/Chart.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/system_design/scripts/canvasjs.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/system_design/scripts/jquery.canvasjs.min.js"></script>
+
+<!--<script src="<?php echo base_url(); ?>assets/system_design/scripts/moment.min.js"></script>-->
+<script src="<?php echo base_url();?>assets/system_design/scripts/bootstrap.min.js"></script>
+<!--<script src="<?php echo base_url();?>assets/system_design/scripts/BeatPicker.min.js"></script>-->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="<?php echo base_url();?>assets/system_design/scripts/timepicki.js"></script>
+<script src="<?php echo base_url();?>assets/system_design/scripts/bx-slider.js"></script>
+<script src="<?php echo base_url(); ?>assets/system_design/scripts/bootstrap-datepicker.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/system_design/scripts/html2canvas.js"></script>
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+<script>
+
+    $('#timepicker1').timepicki({
+        show_meridian:false,
+        min_hour_value:0,
+        max_hour_value:23,
+        overflow_minutes:true,
+        increase_direction:'up',
+        disable_keyboard_mobile: true});
+    $('#timepicker2').timepicki({
+        show_meridian:false,
+        min_hour_value:0,
+        max_hour_value:23,
+        overflow_minutes:true,
+        increase_direction:'up',
+        disable_keyboard_mobile: true});
+    $('#go_time_1, #back_time_1').timepicki({show_meridian:false,min_hour_value:0,max_hour_value:23,overflow_minutes:true,increase_direction:'up',disable_keyboard_mobile: true});
+    $('#go_time_2, #back_time_2').timepicki({show_meridian:false,min_hour_value:0,max_hour_value:23,overflow_minutes:true,increase_direction:'up',disable_keyboard_mobile: true});
+    $('#go_time_3, #back_time_3').timepicki({show_meridian:false,min_hour_value:0,max_hour_value:23,overflow_minutes:true,increase_direction:'up',disable_keyboard_mobile: true});
+    $('#go_time_4, #back_time_4').timepicki({show_meridian:false,min_hour_value:0,max_hour_value:23,overflow_minutes:true,increase_direction:'up',disable_keyboard_mobile: true});
+    $('#go_time_5, #back_time_5').timepicki({show_meridian:false,min_hour_value:0,max_hour_value:23,overflow_minutes:true,increase_direction:'up',disable_keyboard_mobile: true});
+    $('#go_time_6, #back_time_6').timepicki({show_meridian:false,min_hour_value:0,max_hour_value:23,overflow_minutes:true,increase_direction:'up',disable_keyboard_mobile: true});
+    $('#go_time_7, #back_time_7').timepicki({show_meridian:false,min_hour_value:0,max_hour_value:23,overflow_minutes:true,increase_direction:'up',disable_keyboard_mobile: true});
+
+</script>
+<?php if(in_array("homebooking",$css_type)) { ?>
+
+    <?php echo $this->load->view('site/common/script'); ?>
+
+<?php } ?>
+
+<?php if(in_array("onlinebooking",$css_type) || in_array("passengerdetails",$css_type)) { ?>
+
+    <?php echo $this->load->view('site/common/online_script'); ?>
+
+<?php } ?>
+<script src="<?php echo base_url(); ?>assets/system_design/plugins/summernote/summernote.min.js"></script>
+
+<!--Date Table-->
+<?php
+if(in_array("datatable",$css_type)) { ?>
+    <script src="<?php echo base_url();?>assets/system_design/scripts/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url();?>assets/system_design/scripts/datatables/dataTables.buttons.min.js"></script>
+    <script src="<?php echo base_url();?>assets/system_design/scripts/datatables/jszip.min.js"></script>
+    <script src="<?php echo base_url();?>assets/system_design/scripts/datatables/pdfmake.min.js"></script>
+    <script src="<?php echo base_url();?>assets/system_design/scripts/datatables/vfs_fonts.js"></script>
+    <script src="<?php echo base_url();?>assets/system_design/scripts/datatables/buttons.html5.min.js"></script>
+    <script class="init">
+        function toDate(dateStr) {
+            if(dateStr){
+                console.log(dateStr);
+                var parts = dateStr.split("/");
+                return new Date(parts[2], parts[1] - 1, parts[0])
+            }
+            
+        }
+        // Date range filter
+        var minDateFilter = "";
+        var maxDateFilter = "";
+
+        var minAgeFilter = "";
+        var maxAgeFilter = "";
+
+        var dateIndex = $("#example thead").find(".column-date").index();
+        $.fn.dataTableExt.afnFiltering.push(
+            function(oSettings, aData, iDataIndex) {
+                if($("#table-filter .dpo").length > 0) {
+                    if (typeof aData._date == 'undefined') {
+                        if(aData[dateIndex]){
+                            aData._date = toDate(aData[dateIndex]).getTime();
+                        }
+                    }
+
+                    if (minDateFilter && !isNaN(minDateFilter)) {
+                        //console.log(aData._date);
+                        //console.log(minDateFilter);
+                        //console.log("min");
+                        //console.log(aData._date < minDateFilter);
+                        if (aData._date < minDateFilter) {
+                            return false;
+                        }
+                    }
+
+                    if (maxDateFilter && !isNaN(maxDateFilter)) {
+
+                        //console.log(maxDateFilter);
+                        //console.log(aData._date);
+                        //console.log("max")
+                        //console.log(aData._date > maxDateFilter);
+                        if (aData._date > maxDateFilter) {
+                            return false;
+                        }
+                    }
+                }
+
+                return true;
+            }
+        );
+
+        var ageIndex = $("#example thead").find(".column-age").index();
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min = parseInt( $('.table-filter input[data-name="age_from"]').val(), 10 );
+                var max = parseInt( $('.table-filter input[data-name="age_to"]').val(), 10 );
+                var age = parseFloat( data[ageIndex] ) || 0; // use data for the age column
+
+                if( ( isNaN( min ) && isNaN( max ) ) ||
+                    ( isNaN( min ) && age <= max ) ||
+                    ( min <= age   && isNaN( max ) ) ||
+                    ( min <= age   && age <= max ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        if($("#example thead").find(".column-first_name").length > 0) {
+            $.fn.dataTable.ext.search.push(
+                function (settings, data, dataIndex) {
+                    var firstNameIndex = $("#example thead").find(".column-first_name").index();
+                    var lastNameIndex = $("#example thead").find(".column-last_name").index();
+                    var sName = $(document.body).find('.table-filter input[data-name="name"]').val();
+                    var fnRegex = new RegExp(sName, 'i');
+                    var fName = data[firstNameIndex].replace(/[^\w\s]|_/g, function ($1) {
+                        return ' ' + $1 + ' ';
+                    }).replace(/[ ]+/g, ' ').split(' ');
+                    if(lastNameIndex != -1){
+                          var lName = data[lastNameIndex].replace(/[^\w\s]|_/g, function ($1) {
+                        return ' ' + $1 + ' ';
+                    }).replace(/[ ]+/g, ' ').split(' ');
+                    }
+                  
+
+                    return fnRegex.test(fName[0]) || fnRegex.test(fName[1]) || fnRegex.test(fName[2]) || fnRegex.test(lName[0]) || fnRegex.test(lName[1]) || fnRegex.test(lName[1]);
+                }
+            );
+        }
+
+        $('.bdatepicker').datepicker({
+            format: "dd/mm/yyyy"
+        });
+
+        var datatables = $('#example').DataTable({
+            columnDefs: [
+                { targets: 'no-sort', orderable: false }
+            ],
+            dom: '<"table-filter">B<"toolbar">frtip',
+            language: { search: "", searchPlaceholder: "Search" },
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ],
+            initComplete: function(){
+                $("div.toolbar")
+                    .html('<a href="<?=base_url("admin/$active_class/add.php")?>" class="btn btn-sm btn-default"><i class="fa fa-plus"></i> Add</a> <a href="#" class="btn btn-sm btn-default editBtn"><i class="fa fa-pencil"></i> Edit</a> <a href="#" class="btn btn-sm btn-default delBtn"><i class="fa fa-trash"></i> Delete</a>');
+                var filterInp = $("#table-filter");
+                if(filterInp.length > 0) {
+                    var tableFilter = $("div.table-filter");
+                    tableFilter.html(filterInp.html());
+
+                    if($(".table-filter .dpo").length > 0) {
+                        $('.table-filter .dpo[data-name="date_from"]').datepicker({
+                            format: "dd/mm/yyyy",
+                            "onSelect": function (date) {
+                                minDateFilter = new Date(date).getTime();
+                                datatables.fnDraw();
+                            }
+                        });
+                        $('.table-filter .dpo[data-name="date_to"]').datepicker({
+                            format: "dd/mm/yyyy",
+                            "onSelect": function (date) {
+                                maxDateFilter = new Date(date).getTime();
+                                datatables.fnDraw();
+                            }
+                        });
+                    }
+                }
+
+                this.api().columns().every( function () {
+                    var column = this;
+                    var select = $('<select><option value=""></option></select>')
+                        .appendTo( $(column.footer()).empty() )
+                        .on( 'change', function () {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+
+                            column
+                                .search( val ? '^'+val+'$' : '', true, false )
+                                .draw();
+                        } );
+
+                    column.data().unique().sort().each( function ( d, j ) {
+                        select.append( '<option value="'+d+'">'+d+'</option>' )
+                    } );
+                } );
+
+            },
+            "drawCallback": function () {
+                $('.dataTables_paginate .paginate_button').addClass('btn btn-default');
+            }
+        });
+        var datatables = $('#example_language').DataTable({
+            columnDefs: [
+                { targets: 'no-sort', orderable: false }
+            ],
+            dom: '<"table-filter">B<"toolbar">frtip',
+            language: { search: "", searchPlaceholder: "Search" },
+            buttons: [
+                'copyHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ],
+            initComplete: function(){
+                $("div.toolbar").html('<a href="<?=base_url("admin/$active_class/add.php")?>" class="btn btn-sm btn-default"><i class="fa fa-plus"></i> Add</a> <a href="javascript:void(0);" class="btn btn-sm btn-default lang_edit" data-edit="0" onClick="setUpdateAction();"><i class="fa fa-pencil"></i> Edit</a> <a href="javascript:void(0);" class="btn btn-sm btn-default lang_edit" data-edit="0" onClick="setgoogletranslateAction();"><i class="fa fa-language"></i> Translate</a>  <a href="<?=base_url("admin/$active_class/importcsv.php")?>" class="btn btn-sm btn-default delBtn"><i class="fa fa-upload"></i> Import Csv</a>');
+                var filterInp = $("#table-filter");
+                if(filterInp.length > 0) {
+                    var tableFilter = $("div.table-filter");
+                    tableFilter.html(filterInp.html());
+
+                    if($(".table-filter .dpo").length > 0) {
+                        $('.table-filter .dpo[data-name="date_from"]').datepicker({
+                            format: "dd/mm/yyyy",
+                            "onSelect": function (date) {
+                                minDateFilter = new Date(date).getTime();
+                                datatables.fnDraw();
+                            }
+                        });
+                        $('.table-filter .dpo[data-name="date_to"]').datepicker({
+                            format: "dd/mm/yyyy",
+                            "onSelect": function (date) {
+                                maxDateFilter = new Date(date).getTime();
+                                datatables.fnDraw();
+                            }
+                        });
+                    }
+                }
+            },
+            "drawCallback": function () {
+                $('.dataTables_paginate .paginate_button').addClass('btn btn-default');
+            }
+        });
+        $(document).ready(function() {
+
+            if($(".table-filter .dpo").length > 0) {
+                $(".table-filter .dpo[data-name='date_from']").on("change", function () {
+                    minDateFilter = new Date(toDate(this.value)).getTime();
+                    datatables.draw();
+                });
+                $(".table-filter .dpo[data-name='date_to']").on("change", function () {
+                    maxDateFilter = new Date(toDate(this.value)).getTime();
+                    datatables.draw();
+                });
+            }
+            $('.table-filter input[data-name="age_from"], .table-filter input[data-name="age_to"]').on("keyup change", function () {
+                datatables.draw();
+            });
+            $(".table-filter input[data-name='name']").on("keyup", function () {
+                datatables.draw();
+            });
+            $('.example').dataTable();
+            $(".singleSelect:checked").prop("checked", false);
+            $(".singleSelect").click(function () {
+                var that = $(this);
+                var checked = that.is(":checked");
+                $("table .singleSelect:checked").prop("checked", false);
+                if(checked) {
+                    that.prop("checked", true);
+                    //console.log(that.data('id'));
+                    $("#example").attr("data-selected_id", that.data('id'))
+                } else
+                    $("#example").attr("data-selected_id", "")
+            });
+
+            var filterInputs = $(".table-filter input, .table-filter select");
+            filterInputs.each(function (x, y) {
+                var name = $(y).data('name');
+                //console.log(name)
+                if(name != undefined) {
+                    $(y).on("change keyup", function () {
+                        if ($.inArray(name, ['name', 'date_from', 'date_to','age_from','age_to']) === -1) {
+                            var colIndex = $("#example thead").find(".column-"+name).index();
+                            if (datatables.column(colIndex).search() !== this.value) {
+                                datatables.column(colIndex).search(this.value).draw();
+                            }
+                        }
+                    });
+                }
+            });
+
+        });
+
+    </script>
+<?php } ?>
+<!--Date Table-->
+
+
+
+<script>
+    function setgoogletranslateAction(){
+        $.each($(".checkbox:checked"), function(){
+            var sentence = $(this).attr('data-value');
+            var data_id = $(this).attr('data-id');
+            var data_token = $(this).attr('data-token');
+            var td_id = $(this).attr('id');
+
+            $('#'+td_id+'_tdpre')
+                    .css("background", "#FFF url(<?= base_url('assets/system_design/images/ajax-loader.gif'); ?>) no-repeat center right 5px / 25px");
+            <?php if (isset($subtitle)) : ?>
+            if('<?= $subtitle; ?>' != 'en'){
+                $.ajax({
+                    url: "https://www.googleapis.com/language/translate/v2?key=AIzaSyB-ktxnSZFDZnKjjPz6tbk_iDMN2FxkXmo&q="+sentence+"&source=en&target=<?= @$subtitle; ?>",
+                    dataType: 'json',
+                    success: function(res){
+                        var translated = "";
+                        $.each(res.data.translations, function(index, val) {
+                            translated = val.translatedText;
+                            translate = translated.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+                                return letter.toUpperCase();
+                            });
+                        });
+                        $.ajax({
+                            url : '<?= base_url("language/update_translation"); ?>',
+                            type : "GET",
+                            data : 'column=translation&data=' + translate
+                                    + '&id=' + data_id+ '&lang_id=' + <?= $lang_id; ?>+ '&token_id=' + data_token,
+                            success : function(data) {
+                                $('#'+td_id+'_tdpre').html(translate);
+                                $('#'+td_id+'_tdpre').css("background", "#FDFDFD");
+                            }
+                        });
+                    }
+                });
+            }
+            else{
+                $.ajax({
+                    url : '<?= base_url("language/update_translation"); ?>',
+                    type : "GET",
+                    data : 'column=translation&data=' + sentence
+                            + '&id=' + data_id+ '&lang_id=' + <?= $lang_id; ?>+ '&token_id=' + data_token,
+                    success : function(data) {
+                        $('#'+td_id+'_tdpre').html(sentence);
+                        $('#'+td_id+'_tdpre').css("background", "#FDFDFD");
+                    }
+                });
+            }
+        <?php endif; ?>
+        });
+    }
+    function setUpdateAction() {
+        if($('.lang_edit').attr('data-edit') == 1){
+            document.trasUser.action = "<?= base_url('language/edit_translation/'.@$subtitle); ?>";
+            document.trasUser.submit();
+        }
+        else{
+            alert('Select atlest one checkbox to edit');
+        }
+    }
+    function setDeleteAction() {
+        document.trasUser.action = "<?= base_url('language/delete_translation/'.@$subtitle); ?>";
+        document.trasUser.submit();
+    }
+    
+    $(function () {
+        $(document.body).on("click",".editBtn",function () {
+            var selected = $("#example").attr("data-selected_id");
+            if(selected != ""){
+                location.href = "<?=site_url();?>admin/<?=@$active_class?>/" + selected + "/edit.php"
+            } else
+                alert("Please select a row to edit.");
+        });
+
+        $(document.body).on("click",".delBtn",function () {
+            var selected = $("#example").attr("data-selected_id");
+            if(selected != ""){
+                location.href = "<?=site_url();?>admin/<?=@$active_class?>/" + selected + "/delete.php"
+            } else
+                alert("Please select a row to delete.");
+        });
+
+        $(document.body).on("click",".replyBtn",function () {
+            $(this).text(function (i,text) {
+                return text == "Reply" ? "Close" : "Reply";
+            });
+            $(".replyDiv").toggleClass('hide');
+        });
+
+        $(document.body).on("click",".addNote", function () {
+            $("#noteDIv").append('<div class="row"> <div class="col-xs-10"> <input type="text" class="form-control" placeholder="Write note here" name="note[]"> </div> <div class="col-xs-2"> <button type="button" class="btn btn-circle btn-success btn-sm addNote"><i class="fa fa-plus"></i></button> <button type="button" class="btn btn-circle btn-danger btn-sm delNote"><i class="fa fa-minus"></i></button> </div> </div>');
+        });
+
+        $(document.body).on("click",".addFile", function () {
+            $("#attachDiv").append('<div class="attach-main row"> <div class="col-xs-8"> <input type="file" name="attachment[]"> </div> <div class="col-xs-4"> <button type="button" class="btn btn-circle btn-success btn-sm addFile"><i class="fa fa-plus"></i></button> <button type="button" class="btn btn-circle btn-danger btn-sm delFile"><i class="fa fa-minus"></i></button></div></div>');
+        });
+
+        $(document.body).on("click",".delFile", function () {
+            $(this).closest('.attach-main').remove();
+        });
+        $(document.body).on("click",".delNote", function () {
+            $(this).closest('.row').remove();
+        });
+    });
+</script>
+
+<script type="text/javascript" class="init">
+
+    function setActiveOnlinePackage(id) {
+        numid = id.split('_')[1];
+        $('#cars_data_list div').removeClass('active');
+        $('li').removeClass('active');
+        $('#'+id).parent().closest('ul').addClass('active');
+        $('#'+id).parent().parent().addClass('car-sel-bx active');
+
+    }
+
+</script>
+<!--Slider-->
+<?php if(in_array("slider",$css_type)) { ?>
+<?php } ?>
+<!--Slider-->
+
+<script type="text/javascript">
+    $('.partners').bxSlider({
+        minSlides: 5,
+        maxSlides: 8,
+        slideWidth: 240,
+        slideMargin: 10,
+        infiniteLoop: true,
+        auto:true
+    });
+    $url = "<?php echo site_url(); ?>";
+    $lang = $url.split(".fr/");
+    if($lang[1] == 'en') {
+        $(".liContactUs").css("width","108px");
+        $(".liContactUs").css("text-align","center");
+        $(".top-links").css("margin-left","0px");
+        //  $(".copyright-left").css("font-size","9px");
+    }
+    else if ($lang[1] == 'fr') {
+        $(".liContactUs").css("width","147px");
+        $(".liContactUs").css("text-align","center");
+        $(".liContactUs a").css("font-size","12px");
+        $(".top-links").css("margin-left","-50px");
+        //  $(".copyright-left").css("font-size","9px");
+    }
+    $(".scroll-up > .bx-wrapper").css("max-width","570px");
+    $(document).ready(function(){
+        $("select[id='num2']").change(function(){
+            var val = $(this).val();
+            var type = $("#replyType").val();
+            if(val != ""){
+                $.ajax({             
+                    type: 'POST',             
+                    url: "<?php echo site_url();?>welcome/getReply",
+                    data: '<?php echo $this->security->get_csrf_token_name();?>=<?php echo $this->security->get_csrf_hash();?>&val='+val+'&type='+type,
+                    cache: false,            
+                    success: function(data) {           
+                        CKEDITOR.instances['reply_message'].insertHtml(data);     
+                    }               
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

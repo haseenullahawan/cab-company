@@ -1,0 +1,229 @@
+.see {
+    color: #e74c3c;
+}
+#total-login {
+    /*background:#fff;*/
+    border-radius: 10px;
+    clear: both;
+    /*display: flex;*/
+    position: relative;
+    /*margin:9em auto 0;
+    width: 440px;  
+    width:90%;*/
+    margin:0px auto 50px;
+}
+
+.login-page-divider {
+    border-left: 1px solid #d6d6d6;
+    height: 500px;
+    position: absolute;
+    left: 51%;
+    margin-left: 0px;
+}
+
+.login-head {
+    color: #fff;
+    float: left;
+    font-size: 20px;
+    height:auto;
+    min-height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bolder;
+    width: 100%;
+    z-index: 99999; 
+    /*border-radius:10px 10px 0px 0px;*/
+    background:#7EA9D3;
+}
+
+.login-head-text {
+    font-size:14px;
+}
+
+.logo-home {
+    font-size: 39px;
+    line-height: 70px;
+}
+.select-type {
+    width: 59px;
+    height: 58px;
+    margin: 14px auto 0;
+}
+select {
+    background: #f4f4f4;
+    box-shadow: 2px 2px 5px #c6c6c6;
+    -moz-box-shadow: 2px 2px 5px #c6c6c6;
+    -ms-box-shadow: 2px 2px 5px #c6c6c6;
+    -o-box-shadow: 2px 2px 5px #c6c6c6;
+    -webkit-box-shadow: 2px 2px 5px #c6c6c6;
+    border: none;
+    margin-top: 10px;
+}
+#fp{ float:left;     display: none ; width:100%;   }
+.forget{
+    margin: 11px -43px;
+    width: 100% !important;
+} 
+.forget:focus{ box-shadow:0px 0px 5px #FFF}
+.us{ border-radius:0px 5px 5px 0px !important;}
+.in-ty {
+    width: 100%;
+    margin-top: 15px;
+}
+.login-btn {
+    float: left;
+    background: #41484b;
+    padding:4px 16px;
+    color: #fff;
+    margin: 15px 0px;
+}
+.login-btn a{ color:#fff !important;}
+.login-btn:hover{ background:#ffa801;
+                  cursor:pointer;
+}
+.a-rig {
+    float: right;
+}
+
+/*.or {
+    background: none repeat scroll 0 0 silver;
+    float: left;
+    margin: 19px 63px;
+    text-align: center;
+    width: 30%;
+}*/
+.forget-pass {
+    background: none repeat scroll 0 0 #ededed;
+    border-radius: 0 0 10px 10px;
+    bottom: 0;
+    float: left;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    color: #000; font-weight: bold; cursor:pointer;
+}
+.forget-pass  a{ color:#000 !important
+}
+.shadow {
+    width: 350px;
+    height: 25px;
+    float: left;
+    background: url('../images/shadow.png') center no-repeat;
+    margin:0 47px;
+}
+.flip_in{
+    opacity:0; 
+    -moz-transform:scale(1.5,1.5);
+    -webkit-transform:scale(1.5,1.5);
+    transform:scale(1.5,1.5);
+    transition:.2s;
+}
+.flip_out{ opacity:1;
+           -moz-transform:scale(1.5,1.5);
+           -webkit-transform:scale(1.5,1.5);
+           transform:scale(1.5,1.5);
+           transition:.2s
+}
+.btt{  background: none repeat scroll 0 0 transparent;
+       color: #fff;
+       margin: 21px; }
+.btt a{ color:#fff}
+.first-row {
+    float: left;
+    height: auto; width:100%;
+}
+.in-ty {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.benefits {
+    display: inline-block;
+    position:relative;
+    margin:0px 0px 50px;
+}
+
+.benefits h4 {
+    font-size: 29px;
+    text-align: left;
+}
+
+.benefits h5 {
+    font-size: 20px;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.benefits h6 {
+    margin: 0;
+    font: 400 15px/18px latoregular,latobold,sans-serif;
+    color: #34495E;
+    text-align: left;
+}
+
+.benefits .titleBox {
+    margin:0px;
+}
+
+.benefits .infoBox {
+    padding: 15px 0px 0px 0px;
+    width:100%;
+    display:inline-block;
+}
+
+.infoBox .fa {
+    font-size:30px;
+    color:#fff;
+}
+
+.infoBox .wallet i {
+    border-radius: 50%;
+    background: #3498DB;
+    padding:15px;
+    position: relative;
+    top:10px;
+}
+
+.infoBox .customer-service i {
+    border-radius: 50%;
+    background: #2ECC71;
+    padding:15px;
+    position: relative;
+    top:10px;
+}
+
+.infoBox .easy-use i {
+    border-radius: 50%;
+    background: #F39C12;
+    padding:15px;
+    position: relative;
+    top:10px;
+}
+
+@media only screen and (max-width:414px) {
+    #total-login {
+        margin-top: 50px;
+        width: 320px;
+    }
+}
+label.error {
+    color: red;
+    float: left;
+    font-weight: 600;
+    padding: 0 15px;
+}
+
+@media only screen and (max-width:320px){
+    #total-login {
+        width: 280px;
+    } 
+}
+
+.col-centered {
+    display:inline-block ;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}

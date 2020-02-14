@@ -1,0 +1,251 @@
+<?php $locale_info = localeconv(); ?>
+<link href="<?php echo base_url(); ?>assets/system_design/css/simple-rating.css" rel="stylesheet">
+<div class="col-md-12"><!--col-md-10 padding white right-p-->
+    <div class="content">
+        <?php $this->load->view('admin/common/breadcrumbs');?>
+        <div class="row">
+            <div class="col-md-12">
+                <?php $this->load->view('admin/common/alert');?>
+                <div class="module">
+                    <?php echo $this->session->flashdata('message'); ?>
+                    <div class="module-head">
+                    </div>
+                    <div class="module-body">
+                        <?=form_open("admin/jobs/".$data->id."/update")?>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Civility*</label>
+                                    <select disabled class="form-control" name="civility" required>
+                                        <?php foreach(config_model::$civility as $key => $civil):?>
+                                            <option <?=set_value('civility',$data->civility) == $civil ? "selected" : ""?> value="<?=$civil?>"><?=$civil?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Nom*</label>
+                                    <input disabled type="text" maxlength="100" class="form-control" required name="name" placeholder="Nom*" value="<?=set_value('name',$data->first_name)?>">
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Prenom*</label>
+                                    <input disabled type="text" maxlength="100" class="form-control" required name="prename" placeholder="Prenom*" value="<?=set_value('prename',$data->last_name)?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Email*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <input disabled id="phone-email" maxlength="100" type="email" class="form-control" required name="email" placeholder="Votre email" value="<?=set_value('email',$data->email)?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Telephone*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                        <input disabled id="num2" maxlength="50" type="text" class="form-control" required name="tel" placeholder="Telephone" value="<?=set_value('tel',$data->telephone)?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Date de naissance*</label>
+                                    <input disabled type="text" class="bdatepicker form-control" name="dob" placeholder="Date de naissance" value="<?=set_value('dob',from_unix_date($data->dob))?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Code Postal*</label>
+                                    <input disabled type="text" maxlength="20" class="form-control" required name="postal_code" placeholder="Code postal*" value="<?=set_value('postal_code',$data->postal_code)?>">
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Offer*</label>
+                                    <select disabled class="form-control" name="offer" required>
+                                        <option value="">Sélectionnez l'Offre d'emploi</option>
+                                        <?php foreach(config_model::$job_offers as $key => $offer):?>
+                                            <option <?=set_value('offer',$data->offer) == $offer ? "selected" : ""?> value="<?=$offer?>"><?=$offer?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Status*</label>
+                                    <select class="form-control" name="status" required>
+                                        <?php foreach(config_model::$job_status as $key => $status):?>
+                                            <option <?=set_value('status',$data->status) == $status ? "selected" : ""?> value="<?=$status?>"><?=$status?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>Subject*</label>
+                                    <select disabled class="form-control" name="msg_subject" required>
+                                        <?php foreach(config_model::$subjects as $key => $subject):?>
+                                            <?php $selected = $key == 2 ? "selected" : ""?>
+                                            <option <?=$selected?> value="<?=$subject?>"><?=$subject?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <?= !empty($data->cv) ? "<a href='" .
+                                        base_url(json_decode($data->cv)->upload_path) .
+                                        "'>(CV)</a>" : "" ?>
+                                    <?= !empty($data->letter) ? " | <a href='" .
+                                        base_url(json_decode($data->letter)->upload_path) .
+                                        "'>(Lettre de Motivation)</a>" : "" ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-9">
+                                <?php $evaluation = $data->evaluation != "" ? json_decode($data->evaluation,true) : []; ?>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        Communication <input type="hidden" class="rating" name="communication" value="<?=set_value('communication',@$evaluation['communication'])?>">
+                                    </div>
+                                    <div class="col-md-2">
+                                        Presentation <input type="hidden" class="rating" name="presentation" value="<?=set_value('presentation',@$evaluation['presentation'])?>">
+                                    </div>
+                                    <div class="col-md-2">
+                                        Driving <input type="hidden" class="rating" name="driving" value="<?=set_value('driving',@$evaluation['driving'])?>">
+                                    </div>
+                                    <div class="col-md-2">
+                                        Look <input type="hidden" class="rating" name="look" value="<?=set_value('look',@$evaluation['look'])?>">
+                                    </div>
+                                    <div class="col-md-2">
+                                        Experience <input type="hidden" class="rating" name="experience" value="<?=set_value('experience',@$evaluation['experience'])?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-md-1" style="padding-top: 5px">
+                                Add note
+                            </div>
+                            <div class="col-md-8" id="noteDIv">
+                                <?php if($notes != false){?>
+                                    <?php foreach($notes as $key => $note):?>
+                                        <div class="row">
+                                            <div class="col-xs-10">
+                                                <input type="text" class="form-control" placeholder="Write note here" name="note[]" value="<?=$note->note?>">
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <button type="button" class="btn btn-circle btn-success btn-sm addNote"><i class="fa fa-plus"></i></button>
+                                                <?php if($key > 0){?>
+                                                    <button type="button" class="btn btn-circle btn-danger btn-sm delNote"><i class="fa fa-minus"></i></button>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    <?php endforeach;?>
+                                <?php } else { ?>
+                                    <div class="row">
+                                        <div class="col-xs-10">
+                                            <input type="text" class="form-control" placeholder="Write note here" name="note[]">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <button type="button" class="btn btn-circle btn-success btn-sm addNote"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-default replyBtn">Close</button>
+                                    <button class="btn btn-default">Update</button>
+                                    <a href="<?=base_url("admin/jobs")?>" class="btn btn-default">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php echo form_close(); ?>
+                        <?=form_open("admin/jobs/".$data->id . "/reply")?>
+                        <div class="row replyDiv">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>Message*</label>
+                                    <textarea class="form-control reply_message" id="reply_message" name="reply_message" required placeholder="Write your message"><?=set_value('reply_message')?></textarea>
+                                    <script>
+                                        CKEDITOR.replace("reply_message", {
+                                            customConfig: "<?=base_url("assets/system_design/config.js")?>"
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-1" style="padding-top: 5px;white-space: nowrap">
+                                        Quick reply:
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <select id="num2">
+                                                <option value="">---Select---</option>
+                                                <?php foreach ($quick_replies as $q) { ?>
+                                                    <option value="<?=$q->name?>"><?=$q->name?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="attach-label">Add files: </div>
+                                        <div class="attach-div" style="" id="attachDiv">
+                                            <div class="attach-main">
+                                                <div class="attach-file">
+                                                    <input type="file" name="attachment[]">
+                                                </div>
+                                                <div class="attach-buttons">
+                                                    <button type="button" class="btn btn-circle btn-success btn-sm addFile"><iR class="fa fa-plus"></iR></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="text-right">
+                                            <button class="btn btn-default">Send</button>
+                                            <button type="button" class="btn btn-default replyBtn">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <?php echo form_close(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.module-->
+    </div>
+    <!--/.content-->
+</div>
+<script src="<?php echo base_url(); ?>assets/system_design/scripts/simple-rating.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var rating = $('.rating').rating();
+        $(".bdatepicker").datepicker({
+            format: "dd/mm/yyyy"
+        });
+    });
+</script>

@@ -1,0 +1,277 @@
+
+<div class="floating-form-2 <?=$configuration['CALL_POPUP'] == 1 ? "visiable" : ""?>" id="contact_form_2">
+    <div class="contact-opener-2">DEMANDE DE RAPPEL ( CLICKEZ ICI ! )</div>
+    <div id="contact_results"></div>
+    <div id="contact_body">
+        <a href="javascript:;" class="close-btn-2"><i class="fa fa-times-circle-o"></i></a>
+        <?php echo form_open_multipart('auth/callMe', ['id' => 'the-contact-form-2', 'class' => 'form']); ?>
+        <h4 style="text-align: center; margin: 0 0 8px">DEMANDE DE RAPPEL</h4>
+        <div class="row">
+            <div class="col-xs-3 form-group" style="padding:0 10px">
+                <select class="form-control" name="civility" required>
+                    <?php foreach(config_model::$civility as $key => $civil):?>
+                        <option value="<?=$civil?>"><?=$civil?></option>
+                    <?php endforeach;?>
+                </select>
+            </div>
+            <div class=" form-group col-xs-4">
+                <input type="text" maxlength="100" class="form-control" required name="name" placeholder="Nom*">
+            </div>
+
+            <div class="form-group col-xs-4">
+                <input type="text" maxlength="100" class="form-control" required name="prename" placeholder="Prenom*">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" form-group">
+                    <input id="enterprise" maxlength="50" type="text" class="form-control" name="company" placeholder="Entreprise ou Organisme (Optionnel)">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                        <input id="num2" maxlength="50" type="text" class="form-control" required name="num" placeholder="Telephone*">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input id="phone-email" maxlength="100" type="email" class="form-control" required name="email" placeholder="Votre email*">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 form-group" style="padding:0 10px">
+                <select class="form-control" name="subject" required>
+                    <option value="">Objet de l'appel*</option>
+                    <?php foreach(config_model::$call_subjects as $key => $subject):?>
+                        <option value="<?=$subject?>"><?=$subject?></option>
+                    <?php endforeach;?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 form-group" style="padding:0 0 0 10px; width: 42% !important;">
+                <select class="form-control" name="days" required>
+                    <option value="">Jours de Rappel*</option>
+                    <?php foreach(config_model::$call_days as $key => $day):?>
+                        <option value="<?=$day?>"><?=$day?></option>
+                    <?php endforeach;?>
+                </select>
+            </div>
+            <div class="col-xs-4 form-group" style="padding:0 4px; width: 30%">
+                <div class="input-group">
+                    <span class="input-group-addon normal-addon" style="border: 0; background: #f2f2f2; padding: 6px">DE</span>
+                    <select class="form-control" name="from_time" style="width: 38px !important;" required>
+                        <?php for($i = 0; $i <= 24; $i++):
+                            $time = $i > 9 ? $i : "0".$i; ?>
+                            <option value="<?=$time?>"><?=$time?></option>
+                        <?php endfor;?>
+                    </select>
+                    <span class="input-group-addon normal-addon" style="border: 0; background: #f2f2f2; padding: 6px 0">H</span>
+                </div>
+            </div>
+            <div class="col-xs-4 form-group" style="padding:0 4px 0 0; width: 26%">
+                <div class="input-group">
+                    <span class="input-group-addon normal-addon" style="border: 0; background: #f2f2f2; padding: 6px">A</span>
+                    <select class="form-control" name="to_time" style="width: 38px !important;" required>
+                        <?php for($i = 0; $i <= 24; $i++):
+                            $time = $i > 9 ? $i : "0".$i; ?>
+                            <option value="<?=$time?>"><?=$time?></option>
+                        <?php endfor;?>
+                    </select>
+                    <span class="input-group-addon normal-addon" style="border: 0; background: #f2f2f2; padding: 6px 0">H</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" form-group">
+                    <textarea rows="3" maxlength="3000" class="form-control" name="message" placeholder="Merci de nous communiquer le motif de votre appel"></textarea>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <input type="text" class="bdatepicker" name="dob" placeholder="Date de naissance">
+                </div>
+            </div>
+        </div>-->
+        <div class="row">
+            <div class="col-xs-12" style="text-align: center">
+                <button class="btn-successs" type="submit">Appelez moi</button>
+            </div>
+        </div>
+        <?=form_close();?>
+    </div>
+</div>
+<!-- / End Call Back Form -->
+
+
+<!-- Contact Slide Form -->
+<div class="floating-form <?=$configuration['SUPPORT_POPUP'] == 1 ? "visiable" : ""?>" id="contact_form">
+    <div class="contact-opener">DEMANDE DE DEVIS ( CLICKEZ ICI ! )</div>
+    <div id="contact_results"></div>
+    <div id="contact_body">
+        <a href="javascript:;" class="close-btn"><i class="fa fa-times-circle-o"></i></a>
+        <?php echo form_open_multipart('auth/submitContactForm', ['id' => 'the-contact-form', 'class' => 'form']); ?>
+        <div class="row">
+            <div class="col-xs-3 form-group" style="padding:0 10px">
+                <select class="form-control" name="civility" required>
+                    <?php foreach(config_model::$civility as $key => $civil):?>
+                        <option value="<?=$civil?>"><?=$civil?></option>
+                    <?php endforeach;?>
+                </select>
+            </div>
+            <div class=" form-group col-xs-4">
+                <input type="text" maxlength="100" class="form-control" required name="name" placeholder="Nom*">
+            </div>
+
+            <div class="form-group col-xs-4">
+                <input type="text" maxlength="100" class="form-control" required name="prename" placeholder="Prenom*">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" form-group">
+                    <input id="enterprise2" maxlength="50" type="text" class="form-control" name="company" placeholder="Entreprise ou Organisme  (Optionnel)">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                        <input id="tel" maxlength="50" type="text" class="form-control" required name="tel" placeholder="Telephone*">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input id="email" maxlength="100" type="email" class="form-control" required name="email" placeholder="Votre email*">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" form-group">
+                    <textarea rows="3" style="height: 160px" maxlength="3000" class="form-control" name="message" required placeholder="Merci de nous indiquez toutes les informations nécessaires afin de vous fournir un devis pour la prestation de transport souhaitée*"></textarea>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <input type="text" class="bdatepicker" name="dob" placeholder="Date de naissance">
+                </div>
+            </div>
+        </div>-->
+        <div class="row">
+            <div class="col-xs-12" style="text-align: center">
+                <button class="btn-successs" type="submit">ENVOYER</button>
+            </div>
+        </div>
+        <?=form_close();?>
+    </div>
+</div>
+<!-- Jobs Slide Form -->
+<div class="floating-form <?=$configuration['JOB_POPUP'] == 1 ? "visiable" : ""?>" id="jobs_form">
+    <div class="contact-opener-3">CANDIDATURE CHAUFFEUR ( CLICKEZ ICI ! )</div>
+    <div id="contact_results"></div>
+    <div id="contact_body">
+        <a href="javascript:;" class="close-btn-3"><i class="fa fa-times-circle-o"></i></a>
+        <?php echo form_open_multipart('auth/submitJobForm', ['id' => 'the-job-form', 'class' => 'form']); ?>
+        <div class="row">
+            <div class="col-xs-3 form-group" style="padding:0 10px">
+                <select class="form-control" name="civility" required>
+                    <?php foreach(config_model::$civility as $key => $civil):?>
+                        <option value="<?=$civil?>"><?=$civil?></option>
+                    <?php endforeach;?>
+                </select>
+            </div>
+            <div class=" form-group col-xs-4">
+                <input type="text" maxlength="100" class="form-control" required name="name" placeholder="Nom*">
+            </div>
+
+            <div class="form-group col-xs-4">
+                <input type="text" maxlength="100" class="form-control" required name="prename" placeholder="Prenom*">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                        <input id="tel" maxlength="50" type="text" class="form-control" required name="tel" placeholder="Telephone*">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input id="email" maxlength="100" type="email" class="form-control" required name="email" placeholder="Email*">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <input type="text" class="bdatepicker" name="dob" required placeholder="Date de naissance">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <input type="text" maxlength="20" class="form-control" required name="postal_code" placeholder="Code postal*">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 form-group">
+                <select class="form-control" name="offer" required>
+                    <option value="">Sélectionnez l'Offre d'emploi</option>
+                    <?php foreach(config_model::$job_offers as $key => $offer):?>
+                        <option value="<?=$offer?>"><?=$offer?></option>
+                    <?php endforeach;?>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-xs-12">
+                <label>CV*</label>
+                <input type="file" required name="cv" accept=".pdf, .doc, .docx">
+            </div>
+            <div class="form-group col-xs-12">
+                <label>Lettre de Motivation</label>
+                <input type="file" name="letter" accept=".pdf, .doc, .docx">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" style="text-align: center">
+                <button class="btn-successs" type="submit">Postuler</button>
+            </div>
+        </div>
+        <?=form_close();?>
+    </div>
+</div>
+<script src="<?php echo base_url(); ?>/assets/system_design/scripts/modals_script.js" type="text/javascript"></script>
